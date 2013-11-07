@@ -7,8 +7,8 @@ public class SessionScreen extends JFrame {
 	private ImageIcon header, footer;
 	private JPanel sessions;
 	private JButton create, join;
-	private JTextField seshIDField, seshPassField;
-	private JLabel prompt, seshID, seshPass, headerLabel;
+	private JTextField officeIDField, seshIDField, seshPassField;
+	private JLabel prompt, officeID, seshID, seshPass, headerLabel;
 	
 	public SessionScreen(){
 		super("Join/Create Session");
@@ -24,7 +24,13 @@ public class SessionScreen extends JFrame {
 				+ "already in progress or choose create session ID to start a new session.<br><br></html>");
 		add(prompt, BorderLayout.CENTER);
 		
-		sessions = new JPanel(new GridLayout(3,2));
+		sessions = new JPanel(new GridLayout(4,2));
+		
+		officeID = new JLabel("Office ID: ");
+		officeIDField = new JTextField(10);
+		sessions.add(officeID);
+		sessions.add(officeIDField);
+		
 		seshID = new JLabel("Session ID: ");
 		seshIDField = new JTextField(10);
 		sessions.add(seshID);
@@ -52,6 +58,11 @@ public class SessionScreen extends JFrame {
 	
 	private class JoinListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			FeatureScreen feats = new FeatureScreen();
+			feats.pack();
+			feats.setVisible(true);
+			setVisible(false);
+			
 		}
 		
 	}
