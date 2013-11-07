@@ -7,7 +7,7 @@ public class CreateScreen extends JFrame {
 	private ImageIcon header;
 	private JLabel firstName, lastName, userName, password, passReenter, email, phone, prompt, promptspace, headerLabel;
 	private JTextField first, last, user, pass, pass2, emailAddy, phoneNum;
-	private JButton continueButton;
+	private JButton continueButton, goBack, help, exitButton;
 	private JPanel userPanel, buttons;
 
 	public CreateScreen(){

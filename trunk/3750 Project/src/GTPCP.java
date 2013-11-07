@@ -6,16 +6,16 @@ import java.awt.event.*;
 
 public class GTPCP extends JFrame {
 	private ImageIcon header, footer;
-	private JButton login, createUser;
+	private JButton login, createUser, exitButton, helpButton;
 	private JLabel headerLabel, footerLabel, welcomeLabel, 
 					unPrompt, passPrompt;
 	private JTextField username, password;
-	private JPanel buttonPanel, loginPanel;
+	private JPanel buttonPanel, loginPanel, exitPanel;
 	
 	public GTPCP(){
 		super("GTPCP");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLayout(new GridLayout(3,1));
+		setLayout(new GridLayout(4,1));
 		
 		header = new ImageIcon("about.jpg");
 		headerLabel = new JLabel(header);
@@ -51,6 +51,18 @@ public class GTPCP extends JFrame {
 		buttonPanel.add(login);
 		
 		add(buttonPanel);
+		
+		helpButton = new JButton("Help");
+		helpButton.addActionListener(new HelpListener());
+		
+		exitButton = new JButton("Exit");
+		exitButton.addActionListener(new ExitListener());
+		
+		
+		exitPanel = new JPanel();
+		exitPanel.add(helpButton);
+		exitPanel.add(exitButton);
+		add(exitPanel);
 	}
 	
 	private class LoginListener implements ActionListener{
@@ -74,6 +86,20 @@ public class GTPCP extends JFrame {
 		}
 	}
 	
+	private class HelpListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			HelpScreen halp = new HelpScreen();
+			halp.pack();
+			halp.setVisible(true);
+		}
+		
+	}
+	
+	private class ExitListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			System.exit(0);
+		}
+	}
 	public static void main(String[] args){
 		GTPCP splash = new GTPCP();
 		splash.pack();
