@@ -15,7 +15,7 @@ public class GTPCP extends JFrame {
 	public GTPCP(){
 		super("GTPCP");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLayout(new GridLayout(4,1));
+		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		
 		header = new ImageIcon("about.jpg");
 		headerLabel = new JLabel(header);
