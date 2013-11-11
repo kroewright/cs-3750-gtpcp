@@ -81,6 +81,8 @@ public class CreateScreen extends JFrame {
 	
 	private class ContinueListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			//this is where the information entered will be handled as well
+			
 			SessionScreen sesh = new SessionScreen();
 			sesh.pack();
 			sesh.setVisible(true);

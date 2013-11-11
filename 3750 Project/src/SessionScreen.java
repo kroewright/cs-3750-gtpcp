@@ -61,11 +61,15 @@ public class SessionScreen extends JFrame {
 	
 	private class CreateListener implements ActionListener {
 		public void actionPerformed(ActionEvent e){
+			//generates or otherwise gets new session info
 		}
 	}
 	
 	private class JoinListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			//transmits the session ID/pass/office ID info to wherever it needs to go
+			
+			JOptionPane.showMessageDialog(sessions, "Welcome to your session!");
 			FeatureScreen feats = new FeatureScreen();
 			feats.pack();
 			feats.setVisible(true);
