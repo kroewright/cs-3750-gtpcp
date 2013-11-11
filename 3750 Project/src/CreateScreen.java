@@ -7,7 +7,7 @@ public class CreateScreen extends JFrame {
 	private ImageIcon header;
 	private JLabel firstName, lastName, userName, password, passReenter, email, phone, prompt, promptspace, headerLabel;
 	private JTextField first, last, user, pass, pass2, emailAddy, phoneNum;
-	private JButton continueButton, goBack, help, exitButton;
+	private JButton continueButton, goBack, help, exit;
 	private JPanel userPanel, buttons;
 
 	public CreateScreen(){
@@ -65,6 +65,16 @@ public class CreateScreen extends JFrame {
 		buttons = new JPanel();
 		continueButton = new JButton("Continue");
 		continueButton.addActionListener(new ContinueListener());
+		
+		help = new JButton("Help");
+		help.addActionListener(new HelpListener());
+		
+		buttons.add(help);
+		
+		exit = new JButton("Exit");
+		exit.addActionListener(new ExitListener());
+		buttons.add(exit);
+		
 		buttons.add(continueButton);
 		add(buttons);
 	}
@@ -78,5 +88,20 @@ public class CreateScreen extends JFrame {
 			
 		}
 		
+	}
+	
+	private class HelpListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			HelpScreen halp = new HelpScreen();
+			halp.pack();
+			halp.setVisible(true);
+		}
+		
+	}
+	
+	private class ExitListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			System.exit(0);
+		}
 	}
 }

@@ -6,7 +6,7 @@ import java.awt.event.*;
 public class SessionScreen extends JFrame {
 	private ImageIcon header, footer;
 	private JPanel sessions;
-	private JButton create, join;
+	private JButton create, join, help, exit;
 	private JTextField officeIDField, seshIDField, seshPassField;
 	private JLabel prompt, officeID, seshID, seshPass, headerLabel;
 	
@@ -24,7 +24,7 @@ public class SessionScreen extends JFrame {
 				+ "already in progress or choose create session ID to start a new session.<br><br></html>");
 		add(prompt, BorderLayout.CENTER);
 		
-		sessions = new JPanel(new GridLayout(4,2));
+		sessions = new JPanel(new GridLayout(5,2));
 		
 		officeID = new JLabel("Office ID: ");
 		officeIDField = new JTextField(10);
@@ -48,6 +48,14 @@ public class SessionScreen extends JFrame {
 		sessions.add(create);
 		sessions.add(join);
 		
+		help = new JButton("Help");
+		help.addActionListener(new HelpListener());
+		exit = new JButton("Exit");
+		exit.addActionListener(new ExitListener());
+		
+		sessions.add(help);
+		sessions.add(exit);
+		
 		add(sessions, BorderLayout.SOUTH);
 	}
 	
@@ -65,5 +73,20 @@ public class SessionScreen extends JFrame {
 			
 		}
 		
+	}
+	
+	private class HelpListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			HelpScreen halp = new HelpScreen();
+			halp.pack();
+			halp.setVisible(true);
+		}
+		
+	}
+	
+	private class ExitListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			System.exit(0);
+		}
 	}
 }

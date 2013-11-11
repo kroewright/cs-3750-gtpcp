@@ -22,8 +22,11 @@ public class MainScreen extends JFrame{
 		add(headerLabel, BorderLayout.NORTH);
 		
 		whiteBoardPanel = new JPanel();
+		whiteBoardPanel.setSize(450, 450);
 		forumPanel = new JPanel();
+		forumPanel.setSize(300,400);
 		vidChatPanel = new JPanel();
+		vidChatPanel.setSize(300,300);
 		
 		whiteBoardLabel = new JLabel("WhiteBoard");
 		whiteBoardPanel.add(whiteBoardLabel);
