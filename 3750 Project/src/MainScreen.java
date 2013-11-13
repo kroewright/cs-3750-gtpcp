@@ -11,6 +11,8 @@ public class MainScreen extends JFrame{
 	private JButton forumButton, whiteBoardButton, vidChatButton, 
 						helpButton, archiveButton, goBackButton, exitButton;
 	private JPanel whiteBoardPanel, forumPanel, vidChatPanel, buttonPanel;
+	private JScrollPane scrolly;
+	private JTextArea whiteboard;
 	
 	
 	public MainScreen(int numFeats, String whichFeats){
@@ -22,14 +24,17 @@ public class MainScreen extends JFrame{
 		add(headerLabel, BorderLayout.NORTH);
 		
 		whiteBoardPanel = new JPanel();
-		whiteBoardPanel.setSize(450, 450);
+		whiteBoardPanel.setSize(200, 200);
 		forumPanel = new JPanel();
 		forumPanel.setSize(300,400);
 		vidChatPanel = new JPanel();
 		vidChatPanel.setSize(300,300);
 		
-		whiteBoardLabel = new JLabel("WhiteBoard");
-		whiteBoardPanel.add(whiteBoardLabel);
+		//whiteBoardLabel = new JLabel("WhiteBoard");
+		//whiteBoardPanel.add(whiteBoardLabel);
+		whiteboard = new JTextArea("This is the whiteboard, make notes here", 40,40);
+		scrolly = new JScrollPane(whiteboard);
+		whiteBoardPanel.add(scrolly);
 		
 		forumLabel = new JLabel("Forum");
 		forumPanel.add(forumLabel);
@@ -107,7 +112,7 @@ public class MainScreen extends JFrame{
 		vidChatButton.addActionListener(new VCListener());
 		
 		archiveButton = new JButton("Search the Archive");
-		//archiveButton.addActionListener(new ArchListener());
+		archiveButton.addActionListener(new ArchListener());
 		
 		helpButton = new JButton("Help");
 		helpButton.addActionListener(new HelpListener());
@@ -161,7 +166,13 @@ public class MainScreen extends JFrame{
 		}
 	}
 	
-	
+	private class ArchListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			ArchiveClass arch = new ArchiveClass();
+			arch.pack();
+			arch.setVisible(true);
+		}
+	}
 //	public static void main(String[] args){
 //		MainScreen test = new MainScreen(2, "vid");
 //		test.pack();
