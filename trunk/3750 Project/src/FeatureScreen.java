@@ -68,7 +68,7 @@ public class FeatureScreen extends JFrame {
 		helpButton = new JButton("Help");
 		helpButton.addActionListener(new HelpListener());
 		searchArch = new JButton("Search the Archives");
-		//searchArch.addActionListener(new ArchListener());
+		searchArch.addActionListener(new ArchListener());
 		exitButton = new JButton("Exit");
 		exitButton.addActionListener(new ExitListener());
 		
@@ -178,6 +178,14 @@ public class FeatureScreen extends JFrame {
 	private class ExitListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			System.exit(0);
+		}
+	}
+	
+	private class ArchListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			ArchiveClass arch = new ArchiveClass();
+			arch.pack();
+			arch.setVisible(true);
 		}
 	}
 }
