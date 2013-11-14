@@ -1,5 +1,7 @@
 import javax.swing.*;
 
+import chat2.ClientGUI;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -13,6 +15,7 @@ public class MainScreen extends JFrame{
 	private JPanel whiteBoardPanel, forumPanel, vidChatPanel, buttonPanel;
 	private JScrollPane scrolly;
 	private JTextArea whiteboard;
+	private ClientGUI chat;
 	
 	
 	public MainScreen(int numFeats, String whichFeats){
@@ -24,11 +27,11 @@ public class MainScreen extends JFrame{
 		add(headerLabel, BorderLayout.NORTH);
 		
 		whiteBoardPanel = new JPanel();
-		whiteBoardPanel.setSize(200, 200);
+		//whiteBoardPanel.setSize(200, 200);
 		forumPanel = new JPanel();
-		forumPanel.setSize(300,400);
+		//forumPanel.setSize(300,400);
 		vidChatPanel = new JPanel();
-		vidChatPanel.setSize(300,300);
+		//vidChatPanel.setSize(250,250);
 		
 		//whiteBoardLabel = new JLabel("WhiteBoard");
 		//whiteBoardPanel.add(whiteBoardLabel);
@@ -36,11 +39,13 @@ public class MainScreen extends JFrame{
 		scrolly = new JScrollPane(whiteboard);
 		whiteBoardPanel.add(scrolly);
 		
-		forumLabel = new JLabel("Forum");
-		forumPanel.add(forumLabel);
+		
+		chat = new ClientGUI("localhost", 1500);
+		//forumLabel = new JLabel(chat);
+		forumPanel.add(chat);
 		
 		//vidChatLabel = new JLabel("");
-		footer = new ImageIcon("tumblr_mw11y4bhGT1t01ny2o1_500.gif");
+		footer = new ImageIcon("head.jpg");
 		vidChatLabel= new JLabel(footer);
 		vidChatPanel.add(vidChatLabel);
 		
@@ -174,12 +179,12 @@ public class MainScreen extends JFrame{
 			arch.pack();
 			arch.setVisible(true);
 		}
-	}
+	}	
+	
 //	public static void main(String[] args){
 //		MainScreen test = new MainScreen(2, "vid");
 //		test.pack();
 //		test.setVisible(true);
-		
 //	}
 }
 
