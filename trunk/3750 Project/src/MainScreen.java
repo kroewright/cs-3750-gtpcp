@@ -39,7 +39,9 @@ public class MainScreen extends JFrame{
 		forumLabel = new JLabel("Forum");
 		forumPanel.add(forumLabel);
 		
-		vidChatLabel = new JLabel("VidChat");
+		//vidChatLabel = new JLabel("");
+		footer = new ImageIcon("tumblr_mw11y4bhGT1t01ny2o1_500.gif");
+		vidChatLabel= new JLabel(footer);
 		vidChatPanel.add(vidChatLabel);
 		
 		whiteBoardPanel.setVisible(false);
