@@ -8,7 +8,7 @@ import java.awt.event.*;
 /*
  * The Client with its GUI
  */
-public class ClientGUI extends JFrame implements ActionListener {
+public class ClientGUI extends JPanel implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	// will first hold "Username:", later on "Enter message"
@@ -30,9 +30,10 @@ public class ClientGUI extends JFrame implements ActionListener {
 	private String defaultHost;
 
 	// Constructor connection receiving a socket number
-	ClientGUI(String host, int port) {
+	public ClientGUI(String host, int port) {
 
-		super("Chat Client");
+		//super("Chat Client");
+		setLayout(new BorderLayout());
 		defaultPort = port;
 		defaultHost = host;
 		
@@ -62,7 +63,7 @@ public class ClientGUI extends JFrame implements ActionListener {
 		add(northPanel, BorderLayout.NORTH);
 
 		// The CenterPanel which is the chat room
-		ta = new JTextArea("Welcome to the Chat room\n", 80, 80);
+		ta = new JTextArea("Welcome to the Chat room\n", 20, 20);
 		JPanel centerPanel = new JPanel(new GridLayout(1,1));
 		centerPanel.add(new JScrollPane(ta));
 		ta.setEditable(false);
@@ -84,8 +85,8 @@ public class ClientGUI extends JFrame implements ActionListener {
 		southPanel.add(whoIsIn);
 		add(southPanel, BorderLayout.SOUTH);
 
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(600, 600);
+		//setDefaultCloseOperation(EXIT_ON_CLOSE);
+		//setSize(600, 600);
 		setVisible(true);
 		tf.requestFocus();
 
@@ -186,8 +187,8 @@ public class ClientGUI extends JFrame implements ActionListener {
 	}
 
 	// to start the whole thing the server
-	public static void main(String[] args) {
-		new ClientGUI("localhost", 1500);
-	}
+//	public static void main(String[] args) {
+//		new ClientGUI("localhost", 1500);
+//	}
 
 }
