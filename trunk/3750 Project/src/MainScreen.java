@@ -27,11 +27,11 @@ public class MainScreen extends JFrame{
 		add(headerLabel, BorderLayout.NORTH);
 		
 		whiteBoardPanel = new JPanel();
-		//whiteBoardPanel.setSize(200, 200);
+		whiteBoardPanel.setSize(200, 200);
 		forumPanel = new JPanel();
-		//forumPanel.setSize(300,400);
+		forumPanel.setSize(300,400);
 		vidChatPanel = new JPanel();
-		//vidChatPanel.setSize(250,250);
+		vidChatPanel.setSize(250,250);
 		
 		//whiteBoardLabel = new JLabel("WhiteBoard");
 		//whiteBoardPanel.add(whiteBoardLabel);
@@ -176,7 +176,7 @@ public class MainScreen extends JFrame{
 	private class ArchListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			ArchiveClass arch = new ArchiveClass();
-			arch.pack();
+			//arch.pack();
 			arch.setVisible(true);
 		}
 	}	
