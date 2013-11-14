@@ -1,4 +1,5 @@
 import java.awt.*;
+
 import java.awt.event.*;
 
 import javax.swing.*;
@@ -184,7 +185,7 @@ public class FeatureScreen extends JFrame {
 	private class ArchListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			ArchiveClass arch = new ArchiveClass();
-			arch.pack();
+			//arch.pack();
 			arch.setVisible(true);
 		}
 	}
