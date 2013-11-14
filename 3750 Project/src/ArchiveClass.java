@@ -12,8 +12,8 @@ import javax.swing.*;
  *
  */
 public class ArchiveClass extends JFrame {
-		public static final int WIDTH = 500;
-		public static final int HEIGHT = 500;
+		public static final int WIDTH = 700;
+		public static final int HEIGHT = 400;
 		private JPanel newPanel;
 		private JLabel newLabelID;
 		private JLabel newLabelDate;
