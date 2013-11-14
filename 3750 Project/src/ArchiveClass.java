@@ -30,7 +30,7 @@ public class ArchiveClass extends JFrame {
 			newPanel = new JPanel();
 			
 			setTitle("Archive");
-			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
 			newLabelID = new JLabel("Please enter the ID number of the session you would like to find:");
