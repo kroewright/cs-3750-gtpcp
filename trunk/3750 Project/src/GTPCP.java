@@ -9,7 +9,8 @@ public class GTPCP extends JFrame {
 	private JButton login, createUser, exitButton, helpButton;
 	private JLabel headerLabel, footerLabel, welcomeLabel, 
 					unPrompt, passPrompt;
-	private JTextField username, password;
+	private JTextField username;
+	private JPasswordField password;
 	private JPanel buttonPanel, loginPanel, exitPanel;
 	
 	public GTPCP(){
@@ -29,7 +30,7 @@ public class GTPCP extends JFrame {
 		username = new JTextField(10);
 		
 		passPrompt = new JLabel("Password: ");
-		password = new JTextField(10);
+		password = new JPasswordField(10);
 		
 		loginPanel = new JPanel(new GridLayout(5,1));
 		loginPanel.add(welcomeLabel);
