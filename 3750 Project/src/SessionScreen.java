@@ -7,7 +7,8 @@ public class SessionScreen extends JFrame {
 	private ImageIcon header, footer;
 	private JPanel sessions;
 	private JButton create, join, help, exit;
-	private JTextField officeIDField, seshIDField, seshPassField;
+	private JTextField officeIDField, seshIDField;
+	private JPasswordField seshPassField;
 	private JLabel prompt, officeID, seshID, seshPass, headerLabel;
 	
 	public SessionScreen(){
@@ -37,7 +38,7 @@ public class SessionScreen extends JFrame {
 		sessions.add(seshIDField);
 		
 		seshPass = new JLabel("Session Password: ");
-		seshPassField = new JTextField(10);
+		seshPassField = new JPasswordField(10);
 		sessions.add(seshPass);
 		sessions.add(seshPassField);
 		
