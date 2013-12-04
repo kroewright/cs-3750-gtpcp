@@ -69,7 +69,7 @@ public class GTPCP extends JFrame {
 	private class LoginListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			//JOptionPane woo = new JOptionPane();
-			JOptionPane.showMessageDialog(loginPanel, "You're Logged In, woo!");
+			JOptionPane.showMessageDialog(loginPanel, "You're Logged In!");
 			SessionScreen sesh = new SessionScreen();
 			sesh.pack();
 			sesh.setVisible(true);
