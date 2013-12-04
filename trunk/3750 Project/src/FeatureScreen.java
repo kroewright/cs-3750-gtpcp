@@ -1,5 +1,4 @@
 import java.awt.*;
-
 import java.awt.event.*;
 
 import javax.swing.*;
@@ -178,6 +177,7 @@ public class FeatureScreen extends JFrame {
 		
 	private class ExitListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			JOptionPane.showMessageDialog(featPanel, "You're logged out, goodbye!");
 			System.exit(0);
 		}
 	}

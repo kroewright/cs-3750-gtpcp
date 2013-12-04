@@ -83,7 +83,7 @@ public class CreateScreen extends JFrame {
 	private class ContinueListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			//this is where the information entered will be handled as well
-			
+			JOptionPane.showMessageDialog(userPanel, "Congratulations! Your account has been created and you're now logged in!");
 			SessionScreen sesh = new SessionScreen();
 			sesh.pack();
 			sesh.setVisible(true);
@@ -104,6 +104,7 @@ public class CreateScreen extends JFrame {
 	
 	private class ExitListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			JOptionPane.showMessageDialog(userPanel, "Goodbye!");
 			System.exit(0);
 		}
 	}

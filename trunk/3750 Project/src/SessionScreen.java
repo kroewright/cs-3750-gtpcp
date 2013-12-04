@@ -62,6 +62,8 @@ public class SessionScreen extends JFrame {
 	
 	private class CreateListener implements ActionListener {
 		public void actionPerformed(ActionEvent e){
+			seshIDField.setText("12345");
+			seshPassField.setText("12345");
 			//generates or otherwise gets new session info
 		}
 	}
@@ -91,6 +93,7 @@ public class SessionScreen extends JFrame {
 	
 	private class ExitListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			JOptionPane.showMessageDialog(sessions, "You're logged out, goodbye!");
 			System.exit(0);
 		}
 	}

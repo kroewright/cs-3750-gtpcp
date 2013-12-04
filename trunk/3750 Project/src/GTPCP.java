@@ -98,6 +98,7 @@ public class GTPCP extends JFrame {
 	
 	private class ExitListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			JOptionPane.showMessageDialog(loginPanel, "Goodbye!");
 			System.exit(0);
 		}
 	}
