@@ -169,6 +169,7 @@ public class MainScreen extends JFrame{
 		
 	private class ExitListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			JOptionPane.showMessageDialog(whiteBoardPanel, "You're logged out, goodbye!");
 			System.exit(0);
 		}
 	}
